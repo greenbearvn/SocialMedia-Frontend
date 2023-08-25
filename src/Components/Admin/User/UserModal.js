@@ -1,25 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { createUser, getUser,updateUser } from "../../../../Service/UserService";
+import { getUser,updateUser, createUser} from "../../../Service/UserService";
+
 
 const UserModal = (props) => {
   const { show, handleClose, type, id } = props;
 
-  const [dataCreateUser, setDataCreateUser] = useState({ name: "", email: "" });
+  const [dataUser, setdataUser] = useState({ name: "", email: "" });
 
   useEffect(() => {
     if (type === "Edit") {
       getDetailUser(id);
     } else {
-      setDataCreateUser({ name: "", email: "" });
+      setdataUser({ name: "", email: "" });
     }
   }, [type, id]);
 
   const getDetailUser = async (id) => {
     const res = await getUser(id);
     if (res && res.data) {
-      setDataCreateUser(res.data.userDetail);
+      setdataUser(res.data.userDetail);
     } else {
       alert("not found api");
     }
@@ -29,16 +30,15 @@ const UserModal = (props) => {
     e.preventDefault();
     if(type === "Edit"){
       try {
-        const res = await updateUser(id,dataCreateUser);
+        const res = await updateUser(id,dataUser);
         if (res && res.data) {
-          setDataCreateUser({ name: "", email: "" });
+          setdataUser({ name: "", email: "" });
           handleClose(); // Close the modal after successful submission
         } else {
           alert("API not found");
         }
 
-        console.log(id);
-        console.log(dataCreateUser);
+  
       } catch (error) {
         console.error("Error creating user:", error);
         alert("User creation failed");
@@ -46,9 +46,9 @@ const UserModal = (props) => {
     }
     else{
       try {
-        const res = await createUser(dataCreateUser);
+        const res = await createUser(dataUser);
         if (res && res.data) {
-          setDataCreateUser({ name: "", email: "" });
+          setdataUser({ name: "", email: "" });
           handleClose(); // Close the modal after successful submission
         } else {
           alert("API not found");
@@ -62,7 +62,7 @@ const UserModal = (props) => {
   };
 
   const handleChange = (e) => {
-    setDataCreateUser({ ...dataCreateUser, [e.target.name]: e.target.value });
+    setdataUser({ ...dataUser, [e.target.name]: e.target.value });
   };
 
   return (
@@ -78,7 +78,7 @@ const UserModal = (props) => {
               type="text"
               className="form-control"
               name="name"
-              value={dataCreateUser.name}
+              value={dataUser.name}
               onChange={handleChange}
             />
           </div>
@@ -88,7 +88,7 @@ const UserModal = (props) => {
               type="email"
               className="form-control"
               name="email"
-              value={dataCreateUser.email}
+              value={dataUser.email}
               onChange={handleChange}
             />
           </div>

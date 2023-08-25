@@ -1,8 +1,8 @@
 
 import as from "./baseAxios";
 
-const listUsers = () =>{
-    const res =  as.get("/Admin/User/Index");
+const listUsers = (pageNumber) =>{
+    const res =  as.post("/Admin/User/Index/"+ pageNumber);
     return res;
 }
 
@@ -25,4 +25,15 @@ const deleteUser = (id) =>{
 }
 
 
-export {listUsers,createUser,getUser,deleteUser,updateUser}
+const sortUser = (data) =>{
+    return as.post("/Admin/User/Sort" ,data)
+}
+
+
+const searchUsers = (data) =>{
+    return as.post("/Admin/User/Search" ,data)
+}
+
+
+
+export {listUsers,createUser,getUser,deleteUser,updateUser,sortUser,searchUsers}

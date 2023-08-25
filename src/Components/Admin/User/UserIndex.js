@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
 import UserTable from "./UserTable";
-
-import Button from "react-bootstrap/Button";
+import { useState, useEffect } from "react";
 
 const UserIndex = () => {
   return (
