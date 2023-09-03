@@ -2,12 +2,7 @@
  * Feather Icons (https://feathericons.com/)
  * Licensed under MIT
  */
-@font-face {
-  font-family: 'Feather-Icons';
-  src: url("../fonts/Feather-Icons.ttf?7ncawf") format("truetype"), url("../fonts/Feather-Icons.woff?7ncawf") format("woff"), url("../fonts/Feather-Icons.svg?7ncawf#Feather-Icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 [class^="icon-feather-"], [class*=" icon-feather-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -1091,12 +1086,7 @@
  * Material Icons (https://material.io/tools/icons/)
  * Apache license version 2.0
  */
-@font-face {
-  font-family: 'Material-Icons';
-  src: url("../fonts/Material-Icons.ttf?e8u1sb") format("truetype"), url("../fonts/Material-Icons.woff?e8u1sb") format("woff"), url("../fonts/Material-Icons.svg?e8u1sb#Material-Icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 [class^="icon-material-"], [class*=" icon-material-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -1720,12 +1710,7 @@
   content: "\e992";
 }
 
-@font-face {
-  font-family: 'Brand-Icons';
-  src: url("../fonts/Brand-Icons.ttf?blcw31") format("truetype"), url("../fonts/Brand-Icons.woff?blcw31") format("woff"), url("../fonts/Brand-Icons.svg?blcw31#Brand-Icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 [class^="icon-brand-"], [class*=" icon-brand-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -3189,13 +3174,7 @@
   content: "\ea69";
 }
 
-@font-face {
-  font-family: 'unicons';
-  src: url("../fonts/unicons.eot");
-  src: url("../fonts/unicons.eot") format("embedded-opentype"), url("../fonts/unicons.woff") format("woff"), url("../fonts/unicons.ttf") format("truetype"), url("../fonts/unicons.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 [class^="uil-"],
 [class*=" uil-"] {
