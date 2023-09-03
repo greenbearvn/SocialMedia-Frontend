@@ -1,5 +1,5 @@
 
-import as from "./baseAxios";
+import as from "../baseAxios";
 
 const listUsers = (pageNumber) =>{
     const res =  as.post("/Admin/User/Index/"+ pageNumber);

@@ -9,12 +9,14 @@ import "./Components/Frontend/Layout/asset/css/style.css";
 import "./Components/Frontend/Layout/asset/css/tailwind.css";
 import "./Components/Frontend/Layout/asset/css/uikit.css";
 
-
-///// JS
-
-
-
 import UserIndex from "./Components/Admin/User/UserIndex";
+
+import PostIndex from "./Components/Admin/Post/PostIndex";
+
+
+import Test from "./Test";
+
+import MyForm from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -22,8 +24,12 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<UserIndex />} />
+        <Route path="/admin/user/index" element={<UserIndex />} />
+        <Route path="/" element={<PostIndex />} />
       </Routes>
     </Router>
+    {/* <MyForm/> */}
+
+    {/* <Test /> */}
   </React.StrictMode>
 );

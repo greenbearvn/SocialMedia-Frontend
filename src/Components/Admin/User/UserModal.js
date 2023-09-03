@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { getUser,updateUser, createUser} from "../../../Service/UserService";
-
+import {
+  getUser,
+  updateUser,
+  createUser,
+} from "../../../Service/Admin/UserServices";
 
 const UserModal = (props) => {
   const { show, handleClose, type, id } = props;
@@ -28,23 +31,20 @@ const UserModal = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(type === "Edit"){
+    if (type === "Edit") {
       try {
-        const res = await updateUser(id,dataUser);
+        const res = await updateUser(id, dataUser);
         if (res && res.data) {
           setdataUser({ name: "", email: "" });
           handleClose(); // Close the modal after successful submission
         } else {
           alert("API not found");
         }
-
-  
       } catch (error) {
         console.error("Error creating user:", error);
         alert("User creation failed");
       }
-    }
-    else{
+    } else {
       try {
         const res = await createUser(dataUser);
         if (res && res.data) {
@@ -58,7 +58,6 @@ const UserModal = (props) => {
         alert("User creation failed");
       }
     }
-    
   };
 
   const handleChange = (e) => {

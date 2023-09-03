@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const MyForm = () => {
   const [name, setName] = useState('');
   const [files, setFiles] = useState([]);
+  const [resData,SetResData] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,9 +21,12 @@ const MyForm = () => {
       method: 'POST',
       body: formData,
     })
-    .then(res => res.json())
+    .then(res => SetResData(res))
     .then(data => console.log(data));
+
+    console.log(resData)
   };
+ 
 
   return (
     <form onSubmit={handleSubmit}>

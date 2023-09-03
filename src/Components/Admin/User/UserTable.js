@@ -1,6 +1,6 @@
 import Table from "react-bootstrap/Table";
 import { useState, useEffect } from "react";
-import { listUsers, deleteUser, sortUser,searchUsers } from "../../../Service/UserService";
+import { listUsers, deleteUser, sortUser,searchUsers } from "../../../Service/Admin/UserServices";
 import UserModal from "./UserModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "react-bootstrap/Button";
